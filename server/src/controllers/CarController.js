@@ -1,8 +1,8 @@
 import { CarModel } from "../models/CarModel.js";
 
 export async function createCar(req, res) {
-    const { brand, model, glbPath } = req.body;
     try {
+        const { brand, model, glbPath } = req.body;
         const newCar = await CarModel.create({
             brand,
             model,

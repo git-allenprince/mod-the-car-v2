@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
 
 const AccessorySchema = new mongoose.Schema({
-    type:{type:String, enum:["spoiler", "wheel", "rim"], required: true},
+    type:{type:String, enum:["Spoiler", "Wheel", "Rim"], required: true},
     label:{type:String, required:true},
-    path:{type:String, required:true},
-    thumbnail:{type: String},
+    accessoryPath:{type:String, required:true},
+    thumbnailPath:{type: String},
     compatibleCars:[
         {
             type:mongoose.Schema.Types.ObjectId,
@@ -12,5 +12,6 @@ const AccessorySchema = new mongoose.Schema({
         }
     ]
 })
+AccessorySchema.index({ type: 1, label: 1 }, { unique: true });
 
-export const Accessories = mongoose.model("Accessories", AccessorySchema);
+export const AccessoryModel = mongoose.model("Accessories", AccessorySchema);
