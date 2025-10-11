@@ -12,4 +12,7 @@ const CarSchema = new mongoose.Schema({
     ]
 })
 
+CarSchema.index({ brand: 1, model: 1 }, { unique: true });
+
+
 export const CarModel= mongoose.model("Cars", CarSchema);
