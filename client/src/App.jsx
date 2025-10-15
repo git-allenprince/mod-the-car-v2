@@ -11,7 +11,7 @@ function App() {
         <div className="min-h-screen bg-gray-100">
             <div className=" p-2 flex items-center justify-start h-25">
                 <Logo />
-                <div className="p-3 ml-25 h-15 flex items-center w-5xl rounded-2xl shadow bg-white gap-5">
+                <div className="p-3 ml-20 h-15 flex items-center w-3xl rounded-2xl shadow bg-white gap-5">
                     <Toolbar />
                 </div>
             </div>
