@@ -1,11 +1,10 @@
 import useCars from "../hooks/useCar";
-import useCarStore from "../store/useCarStore";
+import {useCarStore} from "../store/useCarStore";
+import LoadingRing from "./Loading";
 
 export default function CarList() {
-    const { cars, loading, error } = useCars();
+    const { cars } = useCars();
     const { selectedCar, setSelectedCar } = useCarStore();
-    if (loading) return <p>Loading cars...</p>;
-    if (error) return <p>Error loading cars...</p>;
 
     return (
         <>

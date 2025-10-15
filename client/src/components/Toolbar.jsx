@@ -1,13 +1,15 @@
 import CarList from "./CarList";
 import CarModelList from "./CarModelList";
+import ColorFinish from "./ColorFinish";
+import ColorPicker from "./ColorPicker";
 
-export default function Toolbar(){
-    return(
+export default function Toolbar() {
+    return (
         <>
-            <div>
-                <CarList/>
-                <CarModelList/>
-            </div>
+            <ColorPicker/>
+            <CarList />
+            <CarModelList />
+            <ColorFinish/>
         </>
-    )
+    );
 }

@@ -1,17 +1,17 @@
 import { useEffect } from "react";
-import useCarStore from "../store/useCarStore";
+import {useCarStore} from "../store/useCarStore";
 import useSelectCar from "../hooks/useSelectCar";
+import LoadingRing from "./Loading";
 
 export default function CarModelList() {
     const { selectedCarModel, setSelectedCarModel } = useCarStore();
     const { selectedCar } = useCarStore();
-    const { carDetails, loading, error, fetchCarDetails } = useSelectCar();
+    const { carDetails, fetchCarDetails } = useSelectCar();
 
     useEffect(() => {
         if (selectedCar) fetchCarDetails(selectedCar);
     }, [fetchCarDetails, selectedCar]);
-    if (loading) return <p>Loading car details...</p>;
-    if (error) return <p>Error loading car details...</p>;
+
     return (
         <>
             <select
